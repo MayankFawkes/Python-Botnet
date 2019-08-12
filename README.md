@@ -1,4 +1,4 @@
-# python-botnet
+# Python-Botnet
 This is simple ddos python botnet script for education purpose.
 
 # Notice
