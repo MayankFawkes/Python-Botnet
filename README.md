@@ -1,5 +1,15 @@
 # Python-Botnet
+
 This is simple ddos python botnet script for education purpose.
+
+# Server-Commands
+```
+attack <tcp/udp> <ip> <port> <time in second> <thread>
+Options:
+	ping      	To check server alive or not
+	kill      	To stop all servers
+	list 		    Show online servers
+```
 
 # Notice
 This is just a sample project and i will be not responsible for any of your actions.
