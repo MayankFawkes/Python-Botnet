@@ -8,7 +8,7 @@ attack <tcp/udp> <ip> <port> <time in second> <thread>
 Options:
 	ping      	To check server alive or not
 	kill      	To stop all servers
-	list 		    Show online servers
+	list 		Show online servers
 ```
 
 # Notice
