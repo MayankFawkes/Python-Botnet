@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://github.com/MayankFawkes/Python-Botnet/raw/master/Banner.png">
+</p>
+
 # Python-Botnet
 
 This is simple ddos python botnet script for education purpose.
