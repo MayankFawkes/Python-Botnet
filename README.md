@@ -8,12 +8,17 @@ This is simple ddos python botnet script for education purpose.
 
 # Server-Commands
 ```
-attack <tcp/udp> <ip> <port> <time in second> <thread>
+attack udp <ip> <port> <time in second> <thread>
 Options:
-	ping      	To check server alive or not
-	kill      	To stop all servers
-	list 		Show online servers
+	ping			To check server alive or not
+	kill			To stop all servers
+	list			Show online servers
+	update			To update the clients list
+	exit or quit 	For quiting/exiting
 ```
+# Update
+## 16/01/2021
+* bug fixxed
 
 # Notice
 This is just a sample project and i will be not responsible for any of your actions.
