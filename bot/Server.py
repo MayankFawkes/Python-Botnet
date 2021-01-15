@@ -100,8 +100,13 @@ class Server(Colours):
 			sleep(0.1)
 	
 	def _print_help(self):
-		help=r'''attack <tcp/udp> <ip> <port> <time in second> <thread>)\nOptions:\n\tping		To check server alive or not)\tkill		To stop all servers)\tlist		Show online servers)'''
-
+		help = ("attack udp <ip> <port> <time in second> <thread>\nOptions:\n"
+				"\tping			To check server alive or not\n"
+				"\tkill			To stop all servers\n"
+				"\tlist			Show online servers\n"
+				"\tupdate			To update the clients list\n"
+				"\texit or quit 	For quiting/exiting\n")
+		print(help)
 	def collect(self):
 		while not self.stop:
 			try:
