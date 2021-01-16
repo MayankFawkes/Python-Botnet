@@ -2,7 +2,7 @@
   <img src="https://github.com/MayankFawkes/Python-Botnet/raw/master/Banner.png">
 </p>
 
-# Python-Botnet
+# Python-Botnet (UDP Flood)
 
 This is simple ddos python botnet script for education purpose.
 
