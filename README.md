@@ -20,5 +20,5 @@ Options:
 ## 16/01/2021
 * bug fixxed
 
-# Notice
+# WARNING
 This is just a sample project and i will be not responsible for any of your actions.
