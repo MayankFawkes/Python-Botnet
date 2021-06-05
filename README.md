@@ -21,4 +21,4 @@ Options:
 * bug fixxed
 
 # WARNING
-This is just a sample project and i will be not responsible for any of your actions.
+This is just a sample project, I will not be responsible for any of your actions.
