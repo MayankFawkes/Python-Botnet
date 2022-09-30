@@ -179,7 +179,6 @@ class Response:
 			for row in self.raw_body.decode().split("\r\n"):
 				row_split_list = list(map(lambda x: x.strip(), row.split(":")))
 				self.body[row_split_list[0]] = ":".join(row_split_list[1:]) or None
-	
 	def __str__(self):
 		return f"Request<header={self.header}, body={self.body}>"
 	
