@@ -10,6 +10,7 @@ A Python botnet script with remote control system to clients with included backd
 # Update
 ## 30/09/2022
 * updated
+* server authorization (coming soon)
 
 ## 16/01/2021
 * bug fixxed
