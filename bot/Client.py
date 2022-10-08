@@ -155,7 +155,6 @@ class UDPFlood(Thread):
 
 		while self.run_until():
 			self.sock.sendto(self.message().encode(), (self.host, self.port))
-			sleep(1)
 			logg.debug(f"Sent {self.total_sent} bytes to {self.host}:{self.port}")
 
 		self.close()
