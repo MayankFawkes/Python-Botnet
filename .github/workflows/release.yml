@@ -84,6 +84,11 @@ jobs:
           GOOS: ${{ matrix.goos }}
           GOARCH: ${{ matrix.goarch }}
         run: |
+          if [ "$GOOS" = "darwin" ]; then
+            # UTType is in UniformTypeIdentifiers on macOS 11 and later.
+            export CGO_CFLAGS="${CGO_CFLAGS:+$CGO_CFLAGS }-mmacosx-version-min=10.13"
+            export CGO_LDFLAGS="${CGO_LDFLAGS:+$CGO_LDFLAGS }-framework UniformTypeIdentifiers -mmacosx-version-min=10.13"
+          fi
           out="botnet-${GITHUB_REF_NAME}-${{ matrix.asset }}${{ matrix.ext }}"
           go build -trimpath -tags "${{ matrix.tags }}" -ldflags "${{ matrix.ldflags }}" -o "$out" .
           mkdir -p dist
