@@ -102,3 +102,23 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# Botnet / Wails
+/build/bin/
+/frontend/node_modules/
+/frontend/wailsjs/
+/node_modules/
+/botnet
+/test-results/
+/console.json
+/console.json.tmp
+/preview-console.json
+/preview-console.json.tmp
+/agent.json
+/agent.json.tmp
+/botnet-agent-v*
+/.botnet-build-*/
+/update-signing.key
+/.botnet-update-*
+/update-requests.json
+/.update-requests-*

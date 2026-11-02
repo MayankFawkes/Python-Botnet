@@ -1,0 +1,11 @@
+{
+  "name": "botnet",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test:ui": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1"
+  }
+}

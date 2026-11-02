@@ -1,18 +1,7 @@
-Server Commands
+Botnet — remote shell (client inspector → Shell tab)
 
-list - list all connected clients
-ping - ping all clients
-connect <client_id> - connect to a client
-attack <ip> <port> <duration> <threads> - UDP flood attack on target
-tasklist - list all running tasks
-kill <task_id> - kill a task
-killall - kill all tasks
-destroy - destroy all clients
-help - show this help message
+help     Show this help text
+exit     End the remote shell session (or use Close shell in the console)
 
-
-Server Connect Commands
-
-<command> : shell command to client
-download <file>: Download file from client
-exit: Exit from client
+The Shell tab opens an interactive session on the enrolled client using its
+existing TCP connection. Use only on hosts you administer.
